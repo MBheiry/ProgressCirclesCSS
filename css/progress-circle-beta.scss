@@ -1,0 +1,32 @@
+
+
+
+$color-progress-circle-number: #fff;
+$color-progress-circle: #ebebeb;
+$color-progress-idicator: #66b8ff;
+$color-progress-number: #8b8b8b;
+
+
+@mixin name{
+  $deg: 90;
+  @for $i from 0 through 49 {
+    .progress-circle.progress-#{$i}:after {
+      background-image: linear-gradient(90deg, $color-progress-circle 50%, transparent 50%, transparent), 
+      linear-gradient(#{$deg}deg, $color-progress-idicator 50%, $color-progress-circle 50%, $color-progress-circle);
+      $deg: $deg +3.6;
+    }
+  }
+  $deg: 90;
+  @for $i from 50 through 100 {
+    .progress-circle.progress-#{$i}:after {
+      background-image: linear-gradient(-#{$deg}deg, $color-progress-circle 50%, transparent 50%, transparent), 
+      linear-gradient(270deg, $color-progress-idicator 50%, $color-progress-circle 50%, $color-progress-circle);
+      $deg: $deg - 3.6;
+    }
+  }
+
+  
+} 
+
+@include name;
+
