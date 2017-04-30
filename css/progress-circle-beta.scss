@@ -1,13 +1,7 @@
 
 
 
-$color-progress-circle-number: #fff;
-$color-progress-circle: #ebebeb;
-$color-progress-idicator: #66b8ff;
-$color-progress-number: #8b8b8b;
-
-
-@mixin name{
+@mixin creatLevels{
   $deg: 90;
   @for $i from 0 through 49 {
     .progress-circle.progress-#{$i}:after {
@@ -16,6 +10,7 @@ $color-progress-number: #8b8b8b;
       $deg: $deg +3.6;
     }
   }
+  
   $deg: 90;
   @for $i from 50 through 100 {
     .progress-circle.progress-#{$i}:after {
@@ -28,5 +23,6 @@ $color-progress-number: #8b8b8b;
   
 } 
 
-@include name;
+@include creatLevels;
+
 
